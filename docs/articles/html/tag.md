@@ -1,15 +1,6 @@
-# HTML
-超文本标记语言 (英语：Hypertext Markup Language，简称：HTML )
-[世界上第一个网站](http://info.cern.ch/)
+# HTML 常用元素
 
-就啃这个WHATWG提供的HTML文档 https://whatwg-cn.github.io/html/, 多看几遍之后，对HTML的认识瞬间上升一个档次。
-
-## HTML元素
-HTML里的内容可以分为7类
-MetaData Content,Flow Content,Sectioning Content,Heading Content,Phrasing Content,Embedded Content,Interactive Content
-[更多详情](https://html.spec.whatwg.org/multipage/dom.html#metadata-content-2)
-
-### html
+## html
 是HTML的根元素，一般会包含一个head然后跟一个body标签，建议设置lang属性，有助于其它工具理解文档主要是什么语言。
   
   ```html
@@ -24,8 +15,8 @@ MetaData Content,Flow Content,Sectioning Content,Heading Content,Phrasing Conten
     </html>
   ```
   
-### head
-head元素, 人如其名就是一个头部标签，用它来包裹其它提供元数据的元素，head中的元素都不会显示在页面上。它一般会包含title,meta,base这三个元素，如果要加载样式和脚本也可以在里面写link和script标签。除非有更高级的协议提供标题，否则head中必须要有title标签提供标题。比如邮件中用了html编写内容，可以没有title标签。
+## head
+人如其名就是一个头部标签，用它来包裹其它提供元数据的元素，head中的元素都不会显示在页面上。它一般会包含title,meta,base这三个元素，如果要加载样式和脚本也可以在里面写link,style和script标签。除非有更高级的协议提供标题，否则head中必须要有title标签提供标题。比如邮件中用了html编写内容，可以没有title标签。
 
   ```html
     <!DOCTYPE HTML>
@@ -44,10 +35,12 @@ head元素, 人如其名就是一个头部标签，用它来包裹其它提供�
     </html>
   ```
 
-* title会被其它上下文使用，例如在用户的历史、书签，或搜索结果中.一个html文档中只能有一个title元素，且要写在head元素里。
+### title
+会被其它上下文使用，例如在用户的历史、书签，或搜索结果中.一个html文档中只能有一个title元素，且要写在head元素里。
 
 
-* base，必填属性href用于规定页面中所有相对链接的基准URL，可选属性target用于指定在何处打开页面中的链接。一个html文档中只能有一个base元素，且要写在head元素里。
+### base
+必填属性href用于规定页面中所有相对链接的基准URL，可选属性target用于指定在何处打开页面中的链接。一个html文档中只能有一个base元素，且要写在head元素里。
     
   - target="_self"：在本來的视窗打开链接
   - target="_blank"：在新的视窗打开链接
@@ -68,7 +61,8 @@ head元素, 人如其名就是一个头部标签，用它来包裹其它提供�
   链接地址是 "https://www.example.com/news/archives.html"。
 ```
 
-* meta也属于提供元数据的元素，这些数据不会显示在客户端，但会被其它上下文使用。
+### meta
+也属于提供元数据的元素，这些数据不会显示在客户端，但会被其它上下文使用。
   - name属性
     设置了name属性就必须设置content属性，name的可选值
     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name
@@ -80,7 +74,8 @@ head元素, 人如其名就是一个头部标签，用它来包裹其它提供�
   - charset属性
     设置这个文档使用什么字符集编码，默认utf-8已经兼容世界上绝大多数文本了，所以一般不用设置。
 
-* link元素一般用来设置网站地址栏显示的logo、加载外部样式等等。这个标签学问很大，要阅读详细文档才能搞清楚
+### link
+一般用来设置网站地址栏显示的logo、加载外部样式等等。这个标签学问很大，要阅读详细文档才能搞清楚
   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
   
 ```html
@@ -123,3 +118,25 @@ script不设置type属性时默认当做javascript代码，script支持的type�
     var jsonData = JSON.parse(document.querySelector("#json").innerHTML);
   </script>
 ```
+
+### style
+用来插入文档的显示样式。它只能放在head元素中，这个标签将在css章节中详细讲解。
+
+
+
+## body
+  body元素用来展示html文档的内容，一个文档中有且仅能有一个body元素。也就是说我们要展示给用户看到的内容都要放到body元素中
+
+```html
+  <html>
+    <head>
+      <title>Document title</title>
+    </head>
+    <body>
+      <p>This is a paragraph</p>
+    </body>
+  </html>
+```
+
+## 其它元素
+https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element

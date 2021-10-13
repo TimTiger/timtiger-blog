@@ -27,7 +27,7 @@ function getCategorySidebar() {
       ]
     },
     {
-      text: 'Http',
+      text: 'HTTP',
       children: [
         { text: 'HTTP', link: '/articles/http/http' },
         { text: 'HTTP 1.1', link: '/articles/http/http1_1' },
@@ -38,8 +38,11 @@ function getCategorySidebar() {
     { 
       text: "HTML",
       children: [
-        { text: 'HTML基础', link: '/articles/html/index'},
+        { text: 'HTML', link: '/articles/html/html'},
+        { text: 'HTML 元素', link: '/articles/html/element'},
+        { text: 'HTML 常用元素', link: '/articles/html/tag'},
       ]
-    }
+    },
+    
   ]
 }
