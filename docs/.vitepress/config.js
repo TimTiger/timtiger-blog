@@ -43,6 +43,16 @@ function getCategorySidebar() {
         { text: 'HTML 常用元素', link: '/articles/html/tag'},
       ]
     },
+    { 
+      text: "CSS",
+      children: [
+        { text: '认识CSS', link: '/articles/stylesheet/css'},
+        { text: 'CSS选择器', link: '/articles/stylesheet/css-selector'},
+        { text: 'CSS属性', link: '/articles/stylesheet/css-key'},
+        { text: 'CSS属性值', link: '/articles/stylesheet/css-value'},
+        { text: 'CSS @规则', link: '/articles/stylesheet/css-at-rule'},
+      ]
+    },
     
   ]
 }
