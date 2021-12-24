@@ -77,3 +77,74 @@ css除了普通的选择器+声明块的规则外，还有一种@规则。用来
   @media screen,(min-width: 100px) {} //,链接多条媒体查询，任意一条媒体查询为true，则样式会被应用
   @media only screen and (color) {} //only是为了兼容老浏览器，现在几乎不用了。
 ```
+
+## @supports
+
+  您可以指定依赖于浏览器中的一个或多个特定的CSS功能的支持声明。这被称为特性查询。该规则可以放在代码的顶层，也可以嵌套在任何其他条件组规则中。
+
+```css
+  //关键字 + 条件语句
+  @supports (display: grid) {
+    div {
+      display: grid
+    }
+  }
+  
+  //可搭配not,and,or使用
+  @supports not (display: grid) {}
+  @supports  (display: grid) and (display: flex) {}
+  @supports  (display: grid) or (display: flex) {}
+```
+
+## @keyframes
+
+关键帧 @keyframes  规则通过在动画序列中定义关键帧（或waypoints）的样式来控制CSS动画序列中的中间步骤。和 转换 transition 相比，关键帧 keyframes 可以控制动画序列的中间步骤。
+
+```css
+  @keyframes slidein {
+    from {
+      transform: translateX(0%); 
+    }
+
+    to {
+      transform: translateX(100%);
+    }
+  }
+```
+
+## @page
+
+@page 规则用于在打印文档时修改某些CSS属性。你不能用@page规则来修改所有的CSS属性，而是只能修改margin,orphans,widow 和 page breaks of the document。对其他属性的修改是无效的。
+
+```css
+  @page {
+    margin: 1cm;
+  }
+
+  @page :first {
+    margin: 2cm;
+  }
+```
+
+## @font-face
+
+这是一个叫做@font-face 的CSS @规则 ，它允许网页开发者为其网页指定在线字体。 通过这种作者自备字体的方式，@font-face 可以消除对用户电脑字体的依赖。 @font-face 不仅可以放在在CSS的最顶层, 也可以放在 @规则 的 条件规则组 中。
+
+```html
+<html>
+<head>
+  <title>Web Font Sample</title>
+  <style type="text/css" media="screen, print">
+    @font-face {
+      font-family: "Bitstream Vera Serif Bold";
+      src: url("https://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd.ttf");
+    }
+
+    body { font-family: "Bitstream Vera Serif Bold", serif }
+  </style>
+</head>
+<body>
+  This is Bitstream Vera Serif Bold.
+</body>
+</html>
+```
