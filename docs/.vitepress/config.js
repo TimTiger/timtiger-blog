@@ -33,6 +33,7 @@ function getCategorySidebar() {
         { text: 'HTTP 1.1', link: '/articles/http/http1_1' },
         { text: 'HTTP 1.2', link: '/articles/http/http1_2' },
         { text: 'HTTP 2.0', link: '/articles/http/http2_0' },
+        { text: 'HTTP Cookie', link: '/articles/http/cookie' },
       ]
     },
     { 
@@ -69,6 +70,12 @@ function getCategorySidebar() {
       text: "Serverless",
       children: [
         { text: '认识Serverless', link: '/articles/serverless/index'},
+      ]
+    },
+    { 
+      text: "Vue3",
+      children: [
+        { text: '认识Vue3', link: '/articles/vue3/index'},
       ]
     },
     {
